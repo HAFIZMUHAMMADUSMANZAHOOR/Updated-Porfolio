@@ -7,16 +7,10 @@ import Portfolio from './components/Portfolio';
 import Services from './components/Services';
 import Resume from './components/Resume';
 import Blog from './components/Blog';
-import Contact from './components/contact';
+import Contact from './components/Contact';
 import More from './components/More';
-// works for More.js or More.jsx
-
-
-
-
-
+import Experince from './components/Experince';
 function App() {
- 
   return (
     <Router>
       <div className={`flex min-h-screen`}>
@@ -28,12 +22,13 @@ function App() {
           <main className="">
             <Routes>
               <Route path="/" element={<AboutMe />} />
+              <Route path="/Experince" element={<Experince/>}/>
               <Route path="/Sidebar" element={< Sidebar />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/services" element={<Services />} />
               <Route path="/resume" element={<Resume />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/Contact" element={<Contact />} />
               <Route path="/more" element={<More />} />
 
             </Routes>

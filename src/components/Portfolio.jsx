@@ -1,20 +1,64 @@
-// File: src/components/Portfolio.jsx
+// Updated Portfolio Component with per-project custom text support
 
 import React, { useContext, useState } from 'react';
 import img1 from '../assets/imges/project-1.jpg';
 import img2 from '../assets/imges/project-2.jpg';
 import img3 from '../assets/imges/project-3.jpg';
 import img4 from '../assets/imges/project-4.jpg';
+import img5 from "../assets/imges/project-5.jpg"
 import { useNavigate } from 'react-router-dom';
 import { ThemeContext } from '../context/ThemeProvider';
 
+// Each project now has its OWN title + description
 const allProjects = [
-  { id: 1, client: 'Google', image: img1, category: 'FYP' },
-  { id: 2, client: 'Dropbox', image: img2, category: 'ML Project' },
-  { id: 4, client: 'Startup Hub', image: img4, category: 'Frontend' },
-  { id: 5, client: 'SalesForce', image: img1, category: 'Backend' },
-  { id: 7, client: 'Lyft', image: img3, category: 'Frontend' },
-  { id: 8, client: 'GitLab', image: img4, category: 'Backend' },
+  {
+    id: 1,
+    client: 'Google',
+    image: img1,
+    category: 'FYP',
+    title: 'Bone Fracture Detection System (FYP)',
+    description: 'AI-powered system detecting bone fractures using ML and X-ray image analysis.'
+  },
+  {
+    id: 2,
+    client: 'Bone Fracture Detection System',
+    image: img1,
+    category: 'ML Project',
+    title: 'Bone Fracture Detection System',
+    description: 'AI-powered system detecting bone fractures using ML and X-ray image analysis.'
+  },
+  {
+    id: 4,
+    client: 'Startup Hub',
+    image: img2,
+    category: 'Frontend',
+    title: ' Delta code Web-App ',
+    description: 'uilt a React.js portfolio site to showcase services, projects, and contact info with a modern, responsive, and user-friendly '
+  },
+  {
+    id: 5,
+    client: 'SalesForce',
+    image: img5,
+    category: 'Backend',
+    title: 'Health Metrics Pro',
+    description: 'High-performance backend automating business workflows using python .'
+  },
+  {
+    id: 7,
+    client: 'Lyft',
+    image: img3,
+    category: 'Frontend',
+    title: 'E Commerce ',
+    description: 'WearHub is an AI-powered fashion e-commerce platform that helps users discover outfits tailored to their preferences.'
+  },
+  {
+    id: 8,
+    client: 'Song Recommendation System',
+    image: img4,
+    category: 'ML Project',
+    title: 'ML Song Recommender',
+    description: 'Backend service recommending songs using deep learning models.'
+  }
 ];
 
 const categories = ['All', 'FYP', 'ML Project', 'Frontend', 'Backend'];
@@ -23,8 +67,7 @@ export default function Portfolio() {
   const [active, setActive] = useState('All');
   const { mode } = useContext(ThemeContext);
 
-  const filtered =
-    active === 'All' ? allProjects : allProjects.filter(p => p.category === active);
+  const filtered = active === 'All' ? allProjects : allProjects.filter(p => p.category === active);
 
   const navigate = useNavigate();
 
@@ -59,9 +102,7 @@ export default function Portfolio() {
               className={`px-3 py-1 border-b-2 ${
                 active === cat
                   ? 'border-green-500 text-green-600'
-                  : `border-transparent ${
-                      mode === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                    }`
+                  : `border-transparent ${mode === 'dark' ? 'text-gray-300' : 'text-gray-600'}`
               }`}
             >
               {cat}
@@ -71,7 +112,7 @@ export default function Portfolio() {
 
         {/* Project Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-          {filtered.map(({ id, client, image }) => (
+          {filtered.map(({ id, client, image, title, description }) => (
             <div
               key={id}
               className={`flex flex-col sm:flex-row shadow rounded overflow-hidden ${
@@ -85,17 +126,12 @@ export default function Portfolio() {
               />
 
               <div className="p-4">
-                <h3 className="font-semibold text-lg">
-                  Bone Fracture Detection and Advisory System
-                </h3>
+                <h3 className="font-semibold text-lg">{title}</h3>
 
-                <p className="text-sm mt-1">
-                  A smart and user-friendly platform that uses machine learning...
-                </p>
+                <p className="text-sm mt-1">{description}</p>
 
                 <p className="text-sm mt-2">
-                  Client:
-                  <span className="text-gray-600"> {client}</span>
+                  Client: <span className="text-gray-600">{client}</span>
                 </p>
               </div>
             </div>

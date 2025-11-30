@@ -6,7 +6,6 @@ import {
   FaBriefcase, FaTags, FaFileAlt, FaBlog,
   FaEnvelope, FaEllipsisH
 } from 'react-icons/fa';
-
 import img9 from '../assets/imges/usman1.jpg';
 import { ThemeContext } from '../context/ThemeProvider';
 
@@ -21,6 +20,8 @@ const Sidebar = () => {
 
   const navItems = [
     { label: 'Portfolio', path: '/portfolio', icon: <FaBriefcase /> },
+    { label: 'Experince', path: '/Experince', icon: <FaFileAlt /> },
+
     { label: 'Services & Pricing', path: '/services', icon: <FaTags /> },
     { label: 'Resume', path: '/resume', icon: <FaFileAlt /> },
     { label: 'Blog', path: '/blog', icon: <FaBlog /> },
@@ -53,7 +54,7 @@ const Sidebar = () => {
               className="w-28 h-28 rounded-full mx-auto border-4 border-green-600 shadow-md"
             />
           </Link>
-          <h2 className="text-xl font-bold mt-4"> Usman Zahoor </h2>
+          <h2 className="text-xl font-bold mt-4  text-green-600"> Usman Zahoor </h2>
           <p className="text-sm mt-2 text-gray-400">
             Junior  Software Engineer
           </p>

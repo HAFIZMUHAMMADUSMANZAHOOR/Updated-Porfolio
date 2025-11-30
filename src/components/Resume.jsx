@@ -43,11 +43,10 @@ export default function Resume() {
         <section className="mb-6">
           <h3 className="text-xl font-bold border-b mb-2">SUMMARY</h3>
           <p>
-            I am a passionate software engineer with practical experience in Machine Learning,
-            Deep Learning, web design, and React. I have developed a solid foundation in
-            various programming languages and frameworks, along with hands-on experience in
-            project management and web development. My educational background, coupled with
-            internships, has equipped me with the skills necessary to excel in the tech industry.
+             Motivated BS Software Engineering graduate with hands-on experience in web designing and machine
+ learning projects. Skilled in applying AI and deep learning techniques, Passionate about leveraging
+ technology to solve real-world problems and currently seeking to pursue a Master’s in Computer Science
+ to advance expertise in Artificial Intelligence and Data Science
           </p>
         </section>
 
